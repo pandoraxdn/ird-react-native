@@ -2,12 +2,14 @@ import React from 'react';
 //import { View, Text } from 'react-native';
 //import { TiposDatos } from './src/ts/TiposDatos';
 //import { Funciones } from './src/ts/Funciones';
-import { Interfaces } from './src/ts/Interfaces'; 
+//import { Interfaces } from './src/ts/Interfaces'; 
+//import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
+import { ContadorScreen } from './src/screens/ContadorScreen';
 
 const App = () => {
 
     return (
-        <Interfaces />
+        <ContadorScreen />
         /*
         <View>
             <Text
