@@ -7,13 +7,16 @@ import React from 'react';
 //import { ContadorScreen } from './src/screens/ContadorScreen';
 //import { ComponenteBasico } from './src/screens/ComponenteBasico';
 //import { ComponenteStyleScreen } from './src/screens/ComponenteStyleScreen';
-import { DimensionesScreen } from './src/screens/DimensionesScreen';
+//import { DimensionesScreen } from './src/screens/DimensionesScreen';
+//import { BoxObjectModel } from './src/screens/BoxObjectModel';
+//import { FlexScreen } from './src/screens/FlexScreen';
+import { FlexDirectionScreen } from './src/screens/FlexDirectionScreen';
 
 
 const App = () => {
 
     return (
-        <DimensionesScreen />
+        <FlexDirectionScreen />
         /*
         <View>
             <Text
