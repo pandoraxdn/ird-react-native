@@ -10,13 +10,14 @@ import React from 'react';
 //import { DimensionesScreen } from './src/screens/DimensionesScreen';
 //import { BoxObjectModel } from './src/screens/BoxObjectModel';
 //import { FlexScreen } from './src/screens/FlexScreen';
-import { FlexDirectionScreen } from './src/screens/FlexDirectionScreen';
+//import { FlexDirectionScreen } from './src/screens/FlexDirectionScreen';
+import { ContadorFabScreen } from './src/screens/ContadorFabScreen';
 
 
 const App = () => {
 
     return (
-        <FlexDirectionScreen />
+        <ContadorFabScreen />
         /*
         <View>
             <Text
