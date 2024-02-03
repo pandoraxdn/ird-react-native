@@ -11,13 +11,16 @@ import React from 'react';
 //import { BoxObjectModel } from './src/screens/BoxObjectModel';
 //import { FlexScreen } from './src/screens/FlexScreen';
 //import { FlexDirectionScreen } from './src/screens/FlexDirectionScreen';
-import { ContadorFabScreen } from './src/screens/ContadorFabScreen';
+//import { ContadorFabScreen } from './src/screens/ContadorFabScreen';
+//import { ContadorCustomScreen } from './src/screens/ContadorCustomScreen';
+//import { CounterReducerScreen } from './src/screens/CounterReducerScreen';
+import { ScreenUseCounterReducer } from './src/screens/ScreenUseCounterReducer';
 
 
 const App = () => {
 
     return (
-        <ContadorFabScreen />
+        <ScreenUseCounterReducer />
         /*
         <View>
             <Text
