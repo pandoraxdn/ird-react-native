@@ -10,3 +10,10 @@
 - Nota:
     - Para poder correr el aplicativo colocar "npm run start"
     - Una vez iniciado el aplicativo oprimir la tecla "w" para abrir el navegador.
+
+## Stack Navigator
+- npm install @react-navigation/native
+- npm install @react-navigation/stack
+- npx expo install react-native-screens
+- npx expo install react-native-gesture-handler
+- npx expo install @react-native-masked-view/masked-view
