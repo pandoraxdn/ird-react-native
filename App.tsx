@@ -14,13 +14,17 @@ import React from 'react';
 //import { ContadorFabScreen } from './src/screens/ContadorFabScreen';
 //import { ContadorCustomScreen } from './src/screens/ContadorCustomScreen';
 //import { CounterReducerScreen } from './src/screens/CounterReducerScreen';
-import { ScreenUseCounterReducer } from './src/screens/ScreenUseCounterReducer';
+//import { ScreenUseCounterReducer } from './src/screens/ScreenUseCounterReducer';
+import { NavigationContainer } from '@react-navigation/native';
+import { StackNavigator } from './src/navigator/StackNavigator';
 
 
 const App = () => {
 
     return (
-        <ScreenUseCounterReducer />
+        <NavigationContainer>
+            <StackNavigator />
+        </NavigationContainer>
         /*
         <View>
             <Text
