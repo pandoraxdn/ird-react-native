@@ -17,3 +17,12 @@
 - npx expo install react-native-screens
 - npx expo install react-native-gesture-handler
 - npx expo install @react-native-masked-view/masked-view
+
+## Drawer Navigator
+- npm install @react-navigation/drawer
+- npm install react-native-gesture-handler react-native-reanimated
+
+### Solución Drawer
+- https://drive.google.com/file/d/1SgOTNepajYkrs6AYc2jsm6TpugoevslL/view
+- (npm upgrade)
+- (npx expo start -c)

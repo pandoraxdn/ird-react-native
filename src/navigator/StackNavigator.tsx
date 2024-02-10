@@ -16,7 +16,15 @@ const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
     return(
-        <Stack.Navigator>
+        <Stack.Navigator
+            initialRouteName='Screen1'
+            screenOptions={{
+                headerShown: false,
+                cardStyle:{
+                    backgroundColor: "white"
+                }
+            }}
+        >
             <Stack.Screen
                 name="Screen1"
                 component={ Screen1 }
