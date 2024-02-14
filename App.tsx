@@ -17,14 +17,15 @@ import React from 'react';
 //import { ScreenUseCounterReducer } from './src/screens/ScreenUseCounterReducer';
 import { NavigationContainer } from '@react-navigation/native';
 //import { StackNavigator } from './src/navigator/StackNavigator';
-import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
+//import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
+import { DrawerNavigator } from './src/navigator/DrawerNavigator';
 
 
 const App = () => {
 
     return (
         <NavigationContainer>
-            <MenuLateralBasico />
+            <DrawerNavigator />
         </NavigationContainer>
         /*
         <View>

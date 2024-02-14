@@ -12,5 +12,20 @@ export const appTheme = StyleSheet.create({
         fontSize: 30,
         textAlign: "center",
         fontWeight: "bold"
+    },
+    avatar:{
+        height: 200,
+        width: 200,
+        borderRadius: 100,
+        borderColor: "pink",
+        borderWidth: 7,
+    },
+    avatarContainer:{
+        alignItems: "center",
+    },
+    menuContainer:{
+        alignItems: "center",
+        marginHorizontal: 10,
+        marginVertical: 10,
     }
 });
