@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, Image } from 'react-native';
+import { AuthContext } from '../context/AuthContext';
 import { DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
 import { ButtonText } from './ButtonText';
 import { appTheme } from '../theme/appTheme';
@@ -8,6 +9,8 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
 
     const assets: string = './../../assets/';
 
+    const { authState } = useContext( AuthContext );
+
     return(
         <DrawerContentScrollView>
             <View
@@ -15,7 +18,11 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
             >
                 <Image
                     style={ appTheme.avatar }
-                    source={ require( assets + 'ci.jpg' ) }
+                    source={ 
+                        ( authState.favoriteImage == undefined )
+                        ? require( assets + 'ci.jpg' )
+                        : { uri: authState.favoriteImage }
+                    }
                 />
                 <Text
                     style={{
@@ -24,7 +31,10 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                         marginTop: 5
                     }}
                 >
-                    Username: { '\n'+'Citlalli' }
+                    Username: { '\n' }
+                    {
+                        ( authState.username != undefined ) && authState.username
+                    }
                 </Text>
             </View>
             <View
@@ -37,6 +47,10 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                 <ButtonText
                     action={ () => navigation.navigate("SettingsScreen") } 
                     title="Settings"
+                />
+                <ButtonText
+                    action={ () => navigation.navigate("AvatarScreen") } 
+                    title="Avatar"
                 />
             </View>
         </DrawerContentScrollView>

@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useContext } from 'react';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { AuthContext } from '../../context/AuthContext';
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from './../../navigator/StackNavigator';
 import { appTheme } from '../../theme/appTheme';
@@ -13,6 +14,8 @@ interface Estudiante{
 interface Props extends StackScreenProps<RootStackParams,"Screen1">{};
 
 export const Screen1 = ( { navigation }: Props ) => {
+
+    const { authState, singIn, logout, changeUsername } = useContext( AuthContext );
 
     const alumno: Estudiante = {
         id: 1,
@@ -28,7 +31,7 @@ export const Screen1 = ( { navigation }: Props ) => {
         <View
             style={{
                 ...appTheme.containerGlobal,
-                ...appTheme.containerMarginGlobal
+                ...appTheme.containerMarginGlobal,
             }}
         >
             <Text
@@ -38,12 +41,75 @@ export const Screen1 = ( { navigation }: Props ) => {
             </Text>
             <Button
                 title='Alumno'
-                onPress={ () => navigation.navigate("PersonaScreen",alumno)  }
+                onPress={ () => {
+                    changeUsername( alumno.nombre )
+                    navigation.navigate("PersonaScreen",alumno)
+                }}
             />
             <Button
                 title='Alumno2'
-                onPress={ () => navigation.navigate("PersonaScreen",alumno2)  }
+                onPress={ () => {
+                    changeUsername( alumno2.nombre )
+                    navigation.navigate("PersonaScreen",alumno2)
+                }}
             />
+            {
+                (authState.isLoggenIn)
+                ?
+                (
+                    <TouchableOpacity
+                        onPress={ logout }
+                    >
+                        <View
+                            style={{
+                                alignSelf: "center",
+                                backgroundColor: "pink",
+                                borderRadius: 40,
+                                justifyContent: "center",
+                                marginTop: 10,
+                                height: 50,
+                                width: 80,
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    ...appTheme.title,
+                                    fontSize: 20
+                                }}
+                            >
+                                Logout
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+                )
+                :
+                (
+                    <TouchableOpacity
+                        onPress={ singIn }
+                    >
+                        <View
+                            style={{
+                                alignSelf: "center",
+                                backgroundColor: "pink",
+                                borderRadius: 40,
+                                justifyContent: "center",
+                                marginTop: 10,
+                                height: 50,
+                                width: 80,
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    ...appTheme.title,
+                                    fontSize: 20
+                                }}
+                            >
+                                SingIn
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+                )
+            }
             <Fab
                 title='->'
                 position='button_right'

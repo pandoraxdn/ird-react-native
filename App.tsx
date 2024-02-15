@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 //import { View, Text } from 'react-native';
 //import { TiposDatos } from './src/ts/TiposDatos';
 //import { Funciones } from './src/ts/Funciones';
@@ -15,17 +15,20 @@ import React from 'react';
 //import { ContadorCustomScreen } from './src/screens/ContadorCustomScreen';
 //import { CounterReducerScreen } from './src/screens/CounterReducerScreen';
 //import { ScreenUseCounterReducer } from './src/screens/ScreenUseCounterReducer';
-import { NavigationContainer } from '@react-navigation/native';
 //import { StackNavigator } from './src/navigator/StackNavigator';
 //import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
+import { NavigationContainer } from '@react-navigation/native';
 import { DrawerNavigator } from './src/navigator/DrawerNavigator';
+import { AuthProvider } from './src/context/AuthContext';
 
 
 const App = () => {
 
     return (
         <NavigationContainer>
-            <DrawerNavigator />
+            <AppState>
+                <DrawerNavigator />
+            </AppState>
         </NavigationContainer>
         /*
         <View>
@@ -38,6 +41,14 @@ const App = () => {
         */
     );
 
+}
+
+const AppState = ( { children }: { children: ReactNode } ) => {
+    return(
+        <AuthProvider>
+            { children }
+        </AuthProvider>
+    );
 }
 
 export default App;

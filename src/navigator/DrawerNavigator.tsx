@@ -4,14 +4,15 @@ import { useWindowDimensions } from 'react-native';
 import { StackNavigator } from "./StackNavigator";
 import { SettingsScreen } from "../screens/navigate/SettingsScreen";
 import { MenuInterno } from "../components/MenuInterno";
+import { AvatarScreen } from "../screens/navigate/AvatarScreen";
 
 export type RootDrawerParams = {
     StackNavigator: undefined;
     SettingsScreen: undefined;
+    AvatarScreen:   undefined;
 }
 
 const Drawer = createDrawerNavigator<RootDrawerParams>();
-
 
 export const DrawerNavigator = () => {
 
@@ -44,6 +45,11 @@ export const DrawerNavigator = () => {
                 name="SettingsScreen"
                 options={{ title: "Settings" }}
                 component={ SettingsScreen }
+            />
+            <Drawer.Screen
+                name="AvatarScreen"
+                options={{ title: "Avatar" }}
+                component={ AvatarScreen }
             />
         </Drawer.Navigator>
     );
