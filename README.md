@@ -26,3 +26,8 @@
 - https://drive.google.com/file/d/1SgOTNepajYkrs6AYc2jsm6TpugoevslL/view
 - (npm upgrade)
 - (npx expo start -c)
+
+## Peticiones API 
+- npm install axios
+- Type interfaces API
+    - https://app.quicktype.io/
