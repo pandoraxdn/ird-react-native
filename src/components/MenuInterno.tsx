@@ -52,6 +52,10 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                     action={ () => navigation.navigate("AvatarScreen") } 
                     title="Avatar"
                 />
+                <ButtonText
+                    action={ () => navigation.navigate("RickMortyNavigator") } 
+                    title="Rick and Morty"
+                />
             </View>
         </DrawerContentScrollView>
     );

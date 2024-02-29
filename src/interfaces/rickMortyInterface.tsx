@@ -14,7 +14,7 @@ export interface CharacterSimple{
     name:   string;
     status: Status;
     gender: Gender;
-    image: string;
+    image:  string;
 }
 
 export interface Info {

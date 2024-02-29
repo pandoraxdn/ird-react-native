@@ -5,11 +5,13 @@ import { StackNavigator } from "./StackNavigator";
 import { SettingsScreen } from "../screens/navigate/SettingsScreen";
 import { MenuInterno } from "../components/MenuInterno";
 import { AvatarScreen } from "../screens/navigate/AvatarScreen";
+import { RickMortyNavigator } from "./RickMortyNavigator";
 
 export type RootDrawerParams = {
     StackNavigator: undefined;
     SettingsScreen: undefined;
     AvatarScreen:   undefined;
+    RickMortyNavigator: undefined;
 }
 
 const Drawer = createDrawerNavigator<RootDrawerParams>();
@@ -50,6 +52,11 @@ export const DrawerNavigator = () => {
                 name="AvatarScreen"
                 options={{ title: "Avatar" }}
                 component={ AvatarScreen }
+            />
+            <Drawer.Screen
+                name="RickMortyNavigator"
+                options={{ title: "Rick and Morty" }}
+                component={ RickMortyNavigator }
             />
         </Drawer.Navigator>
     );

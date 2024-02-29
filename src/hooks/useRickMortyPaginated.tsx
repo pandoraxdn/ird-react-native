@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { rickMortyApi } from "../api/rickMortyApi";
 import { RickMortyPaginateResponse, Result, CharacterSimple } from "../interfaces/rickMortyInterface";
 
-export const useRickMortyPaginated = () => {
+interface UseRickMortyPaginated{
+    isLoading: boolean;
+    simpleCharacter: CharacterSimple[];
+    loadCharacters: () => void;
+}
+
+export const useRickMortyPaginated = (): UseRickMortyPaginated => {
     
     const [ isLoading, setIsLoading ] = useState<boolean>(true);
 
@@ -30,7 +36,7 @@ export const useRickMortyPaginated = () => {
             return { id, name, status, gender, image };
         });
 
-        setSimpleCharacter( (prevArr) => [ ...prevArr, ...newCharacterList ]);
+        setSimpleCharacter( ( prevSimpleCharacterList ) => [ ...prevSimpleCharacterList, ...newCharacterList ]);
 
     }
 
