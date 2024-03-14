@@ -25,6 +25,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permitir $(PRODUCT_NAME) acceso a la camera",
+          "microphonePermission": "Permitir $(PRODUCT_NAME) acceso al microfono",
+          "recordAudioAndroid": true
+        }
+      ]
+    ]
   }
 }

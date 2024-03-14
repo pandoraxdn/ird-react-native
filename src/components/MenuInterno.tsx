@@ -20,7 +20,7 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                     style={ appTheme.avatar }
                     source={ 
                         ( authState.favoriteImage == undefined )
-                        ? require( assets + 'ci.jpg' )
+                        ? require( assets + 'ci_2.jpeg' )
                         : { uri: authState.favoriteImage }
                     }
                 />
@@ -55,6 +55,10 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                 <ButtonText
                     action={ () => navigation.navigate("RickMortyNavigator") } 
                     title="Rick and Morty"
+                />
+                <ButtonText
+                    action={ () => navigation.navigate("QrNavigator") } 
+                    title="Escaner QR"
                 />
             </View>
         </DrawerContentScrollView>
