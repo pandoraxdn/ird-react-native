@@ -27,5 +27,16 @@ export const appTheme = StyleSheet.create({
         alignItems: "center",
         marginHorizontal: 10,
         marginVertical: 10,
+    },
+    input:{
+        borderRadius: 10,
+        textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 25,
+        height: 40,
+        width: 300,
+        margin: 12,
+        borderWidth: 5,
+        borderColor: 'pink',
     }
 });

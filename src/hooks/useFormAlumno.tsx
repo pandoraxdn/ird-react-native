@@ -2,10 +2,11 @@ import { useReducer } from "react";
 import { useAlumnoApi } from "./useAlumnoApi";
 
 export interface FormData{
-    id_alumno:  string;
+    id_alumno:  number | string;
     nombre:     string;
     ap_paterno: string;
     ap_materno: string;
+    image:      string;
     matricula:  string;
     carrera:    string;
     password:   string;
@@ -16,6 +17,7 @@ const initialState: FormData = {
     nombre:     '',
     ap_paterno: '',
     ap_materno: '',
+    image:      '',
     matricula:  '',
     carrera:    '',
     password:   '',
@@ -36,7 +38,7 @@ const formReducer = ( state: FormData, action: Action ) => {
     }
 }
 
-export const useFormUsuario = () => {
+export const useFormAlumno = () => {
 
     const { createUsuario, updateUsuario, deleteUsuario } = useAlumnoApi();
 

@@ -28,6 +28,7 @@ export const useAlumnoApi = () => {
             nombre:     data.nombre,
             ap_paterno: data.ap_paterno,
             ap_materno: data.ap_materno,
+            image:      data.image,
             matricula:  data.matricula,
             carrera:    data.carrera,
             password:   data.password
@@ -45,10 +46,18 @@ export const useAlumnoApi = () => {
             ap_materno: data.ap_materno,
             matricula:  data.matricula,
             carrera:    data.carrera,
-            password:   data.password
         }
 
-        await pandoraApi.put( apiUrl + `/${data.id_alumno}`, dataBody );
+        const password = ( data.password !== '' ) 
+            ? { ...dataBody, password: data.password }
+            : { ...dataBody }
+
+        const image = ( data.image !== '' )
+            ? { ...password, image: data.image }
+            : { ...password }
+
+
+        await pandoraApi.put( apiUrl + `/${data.id_alumno}`, image );
         
     }
 
@@ -69,6 +78,6 @@ export const useAlumnoApi = () => {
         createUsuario,
         updateUsuario,
         deleteUsuario
-    }
+    };
 
 }

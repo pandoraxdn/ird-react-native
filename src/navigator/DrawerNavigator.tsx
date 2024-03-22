@@ -7,6 +7,7 @@ import { MenuInterno } from "../components/MenuInterno";
 import { AvatarScreen } from "../screens/navigate/AvatarScreen";
 import { RickMortyNavigator } from "./RickMortyNavigator";
 import { QrNavigator } from "./QrNavigator";
+import { AlumnosNavigator } from "./AlumnosNavigator";
 
 export type RootDrawerParams = {
     StackNavigator: undefined;
@@ -14,6 +15,7 @@ export type RootDrawerParams = {
     AvatarScreen:   undefined;
     RickMortyNavigator: undefined;
     QrNavigator: undefined;
+    AlumnosNavigator: undefined;
 }
 
 const Drawer = createDrawerNavigator<RootDrawerParams>();
@@ -64,6 +66,11 @@ export const DrawerNavigator = () => {
                 name="QrNavigator"
                 options={{ title: "Escaner QR" }}
                 component={ QrNavigator }
+            />
+            <Drawer.Screen
+                name="AlumnosNavigator"
+                options={{ title: "Alumnos" }}
+                component={ AlumnosNavigator }
             />
         </Drawer.Navigator>
     );
