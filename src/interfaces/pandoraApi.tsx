@@ -8,3 +8,5 @@ export interface AlumnosResponse {
     carrera:    string;
     password:   string;
 }
+
+export type RequestLogin = AlumnosResponse | false;

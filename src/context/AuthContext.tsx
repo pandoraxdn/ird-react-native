@@ -6,6 +6,7 @@ import { authReducer } from "./authReducer";
 export interface AuthState{
     isLoggenIn: boolean;
     username?: string | undefined;
+    matricula?: string | undefined;
     favoriteImage?: string | undefined;
 }
 
@@ -14,6 +15,7 @@ export const AuthInicialState: AuthState = {
     isLoggenIn: false,
     username: undefined,
     favoriteImage: undefined,
+    matricula: undefined,
 }
 
 // Tipado del context que manejará otros componentes
@@ -23,6 +25,7 @@ export interface AuthContextProps{
     changeUsername: ( userName: string ) => void;
     logout: () => void;
     changeFavoriteImage: ( sourceImage: string ) => void;
+    changeMatricula: ( matricula: string ) => void;
 }
 
 // Crear el context
@@ -44,6 +47,10 @@ export const AuthProvider = ( { children }: { children: ReactNode } ) => {
     const changeFavoriteImage = ( sourceImage: string ): void => {
         dispatch( { type: "changeFavoriteImage", payload: sourceImage } );
     }
+    
+    const changeMatricula = ( matricula: string ): void => {
+        dispatch( { type: "changeMatricula", payload: matricula } );
+    }
 
     return(
         <AuthContext.Provider
@@ -52,7 +59,8 @@ export const AuthProvider = ( { children }: { children: ReactNode } ) => {
                 singIn,
                 logout,
                 changeFavoriteImage,
-                changeUsername
+                changeUsername,
+                changeMatricula
             }}
         >
             { children }

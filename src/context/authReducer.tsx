@@ -4,7 +4,8 @@ type AuthAction =
     | { type: "singIn" }
     | { type: "logout" }
     | { type: "changeFavoriteImage", payload: string }
-    | { type: "changeUsername", payload: string };
+    | { type: "changeUsername", payload: string }
+    | { type: "changeMatricula", payload: string };
 
 export const authReducer = ( state: AuthState, action: AuthAction ): AuthState => {
 
@@ -31,6 +32,11 @@ export const authReducer = ( state: AuthState, action: AuthAction ): AuthState =
             return{
                 ...state,
                 username: action.payload,
+            }
+        case 'changeMatricula':
+            return{
+                ...state,
+                matricula: action.payload,
             }
         default:
             return { ...state };

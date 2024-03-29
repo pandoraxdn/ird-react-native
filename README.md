@@ -31,3 +31,13 @@
 - npm install axios
 - Type interfaces API
     - https://app.quicktype.io/
+
+## Camera/Scanner-QR
+- npx expo install expo-camera
+
+## Files 
+- npx expo install expo-file-system
+- npx expo install expo-image-picker
+
+## QR
+- npm i -S react-native-svg react-native-qrcode-svg

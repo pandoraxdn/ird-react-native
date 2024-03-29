@@ -30,15 +30,6 @@ const App = () => {
                 <DrawerNavigator />
             </AppState>
         </NavigationContainer>
-        /*
-        <View>
-            <Text
-                style={{ fontSize: 30 }}
-            >
-                Hola mundo
-            </Text>
-        </View>
-        */
     );
 
 }

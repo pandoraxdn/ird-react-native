@@ -21,7 +21,8 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                     source={ 
                         ( authState.favoriteImage == undefined )
                         ? require( assets + 'ci_2.jpeg' )
-                        : { uri: authState.favoriteImage }
+                        //: { uri: authState.favoriteImage }
+                        : { uri: `data:image/jpeg;base64,${authState.favoriteImage}` }
                     }
                 />
                 <Text
@@ -31,7 +32,7 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                         marginTop: 5
                     }}
                 >
-                    Username: { '\n' }
+                    Estudiante: { '\n' }
                     {
                         ( authState.username != undefined ) && authState.username
                     }

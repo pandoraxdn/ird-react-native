@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { useWindowDimensions } from 'react-native';
 import { StackNavigator } from "./StackNavigator";
@@ -7,7 +7,9 @@ import { MenuInterno } from "../components/MenuInterno";
 import { AvatarScreen } from "../screens/navigate/AvatarScreen";
 import { RickMortyNavigator } from "./RickMortyNavigator";
 import { QrNavigator } from "./QrNavigator";
+import { AuthContext } from "../context/AuthContext";
 import { AlumnosNavigator } from "./AlumnosNavigator";
+import { LoginScreen } from "../screens/alumnos/LoginScreen";
 
 export type RootDrawerParams = {
     StackNavigator: undefined;
@@ -20,7 +22,7 @@ export type RootDrawerParams = {
 
 const Drawer = createDrawerNavigator<RootDrawerParams>();
 
-export const DrawerNavigator = () => {
+const Navigator = () => {
 
     const { width } = useWindowDimensions();
 
@@ -74,5 +76,13 @@ export const DrawerNavigator = () => {
             />
         </Drawer.Navigator>
     );
+
+}
+
+export const DrawerNavigator = () => {
+
+    const { authState } = useContext( AuthContext );
+
+    return ( authState.isLoggenIn ) ? <Navigator/> : <LoginScreen/>;
 
 }
