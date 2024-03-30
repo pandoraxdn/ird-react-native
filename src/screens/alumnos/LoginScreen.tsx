@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
 import { useLogin } from '../../hooks/useLogin';
 import { appTheme } from '../../theme/appTheme';
 
@@ -17,18 +17,30 @@ export const LoginScreen = () => {
         <View
             style={{
                 ...appTheme.containerGlobal,
-                ...appTheme.containerMarginGlobal
+                ...appTheme.containerMarginGlobal,
             }}
         >
             <View
                 style={{ alignItems: "center" }}
             >
+                <Image
+                    style={{
+                        height: 200,
+                        width: 200,
+                        borderRadius: 50,
+                        borderColor: "pink",
+                        borderWidth: 5
+                    }}
+                    source={{
+                        uri: "https://th.bing.com/th/id/OIG2.FBZEqQ5HXtAWH.jhmCq5?w=1024&h=1024&rs=1&pid=ImgDetMain"
+                    }}
+                />
                 {
                     (!isLoading) &&
                     <ActivityIndicator
                         style={{ height: 100 }}
                         size={ 100 }
-                        color="black"
+                        color="pink"
                     />
                 }
                 {
@@ -37,7 +49,8 @@ export const LoginScreen = () => {
                         <Text
                             style={{
                                 ...appTheme.title,
-                                color: "red"
+                                color: "pink",
+                                fontWeight: "bold"
                             }}
                         >
                             { 'Contraseña incorrecta \n' }
@@ -64,8 +77,25 @@ export const LoginScreen = () => {
                     onPress={ handleLogin }
                     disabled={ !isLoading }
                 >
-                    <View>
-                        <Text>
+                    <View
+                        style={{
+                            height: 50,
+                            width: 90,
+                            backgroundColor: 'pink',
+                            justifyContent: "center",
+                            alignItems: "center",
+                            borderRadius: 20,
+                            borderWidth: 2,
+                            borderColor: "violet"
+                        }}
+                    >
+                        <Text
+                            style={{
+                                color: "white",
+                                fontSize: 30,
+                                fontWeight: "bold"
+                            }}
+                        >
                             Login
                         </Text>
                     </View>

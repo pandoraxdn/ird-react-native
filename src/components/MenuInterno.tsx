@@ -65,6 +65,10 @@ export const MenuInterno = ( { navigation }: DrawerContentComponentProps ) => {
                     action={ () => navigation.navigate("AlumnosNavigator") } 
                     title="Alumnos"
                 />
+                <ButtonText
+                    action={ () => navigation.navigate("QrGeneratorScreen") } 
+                    title="QR"
+                />
             </View>
         </DrawerContentScrollView>
     );

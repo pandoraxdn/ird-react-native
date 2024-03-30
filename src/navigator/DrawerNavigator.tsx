@@ -10,6 +10,7 @@ import { QrNavigator } from "./QrNavigator";
 import { AuthContext } from "../context/AuthContext";
 import { AlumnosNavigator } from "./AlumnosNavigator";
 import { LoginScreen } from "../screens/alumnos/LoginScreen";
+import { QrGeneratorScreen } from "../screens/camera/QrGeneratorScreen";
 
 export type RootDrawerParams = {
     StackNavigator: undefined;
@@ -18,6 +19,7 @@ export type RootDrawerParams = {
     RickMortyNavigator: undefined;
     QrNavigator: undefined;
     AlumnosNavigator: undefined;
+    QrGeneratorScreen: undefined;
 }
 
 const Drawer = createDrawerNavigator<RootDrawerParams>();
@@ -35,7 +37,7 @@ const Navigator = () => {
                 drawerType: (width >= 768) ? 'permanent' : 'front',
                 drawerPosition: "right",
                 drawerStyle: {
-                    backgroundColor: 'rgba(103, 254, 221, 0.9)',
+                    backgroundColor: 'rgba(140, 91, 161,0.9)',
                     width: width * 0.7,
                 },
                 headerStyle:{
@@ -73,6 +75,11 @@ const Navigator = () => {
                 name="AlumnosNavigator"
                 options={{ title: "Alumnos" }}
                 component={ AlumnosNavigator }
+            />
+            <Drawer.Screen
+                name="QrGeneratorScreen"
+                options={{ title: "QR" }}
+                component={ QrGeneratorScreen }
             />
         </Drawer.Navigator>
     );
